@@ -6,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerRotation : MonoBehaviour
 {
-    [SerializeField] private float _rotateSpeed;
+    [SerializeField]
+    private float _rotateSpeed;
     private float _horizontalInput;
 
     private Rigidbody2D _rigidbody2D;
