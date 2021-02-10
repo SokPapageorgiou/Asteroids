@@ -14,13 +14,8 @@ public class BulletForce : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
-
-    private void Start()
-    {
-        ApplyForce();
-    }
-
-    private void ApplyForce()
+    
+    public void ApplyForce()
     {
         _rigidbody2D.AddForce(SetForceVector() * _movementSpeed, ForceMode2D.Impulse);
     }
@@ -29,7 +24,7 @@ public class BulletForce : MonoBehaviour
     {
         Vector2 _forceDirection = new Vector2(Mathf.Sin(-TransformZAngleInRadians()), Mathf.Cos(TransformZAngleInRadians()));
         if (_forceDirection.magnitude > 1) _forceDirection.Normalize();
-        
+
         return _forceDirection;
     }
 
