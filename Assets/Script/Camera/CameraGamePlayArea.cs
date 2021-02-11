@@ -8,6 +8,7 @@ public class CameraGamePlayArea : MonoBehaviour
     public static CameraGamePlayArea Instance { get; private set; }
     public float HalfHeight{ get; set; }
     public float HalfWidth { get; set; }
+    public Vector2 BoxColliderSize { get; set; }
 
     void Awake()
     {
@@ -22,7 +23,8 @@ public class CameraGamePlayArea : MonoBehaviour
     {
         Instance.HalfHeight = Camera.main.orthographicSize;
         Instance.HalfWidth = Camera.main.aspect * Instance.HalfHeight;
-        _boxCollider2D.size = new Vector2(Instance.HalfWidth * 2, Instance.HalfHeight * 2);
+        Instance.BoxColliderSize = new Vector2(Instance.HalfWidth * 2, Instance.HalfHeight * 2);
+        _boxCollider2D.size = Instance.BoxColliderSize;
     }
 
 }

@@ -5,10 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(CameraGamePlayArea))]
 public class CameraStageWarp : MonoBehaviour
 {
+    public CameraStageWarp Instance { get; private set;}
+    
     private CameraGamePlayArea _gamePlayArea;
     
     private float _otherPositionX;
     private float _otherPositionY;
+
+    private void Awake()
+    {
+        Instance = this;   
+    }
 
     private void Start()
     {
@@ -22,12 +29,22 @@ public class CameraStageWarp : MonoBehaviour
     private void InvertPosition(Collider2D other)
     {
         _otherPositionX = other.gameObject.transform.position.x;
+        if (_otherPositionX > _gamePlayArea.HalfWidth || _otherPositionX < -_gamePlayArea.HalfWidth) 
+            _otherPositionX = InvertPositionX(_otherPositionX);
+
         _otherPositionY = other.gameObject.transform.position.y;
-
-        if (_otherPositionX > _gamePlayArea.HalfWidth || _otherPositionX < -_gamePlayArea.HalfWidth)
-            other.gameObject.transform.position = new Vector2(-_otherPositionX, _otherPositionY);
-
         if (_otherPositionY > _gamePlayArea.HalfHeight || _otherPositionY < -_gamePlayArea.HalfHeight)
-            other.gameObject.transform.position = new Vector2(_otherPositionX, -_otherPositionY);
+            _otherPositionY = InvertPositionY(_otherPositionY);
+
+        other.gameObject.transform.position = new Vector2(_otherPositionX, _otherPositionY);
+    }
+
+    public float InvertPositionX(float _otherPositionX)
+    {
+        return -_otherPositionX;
+    }
+    public float InvertPositionY(float _otherPositionY)
+    {
+        return -_otherPositionY;
     }
 }

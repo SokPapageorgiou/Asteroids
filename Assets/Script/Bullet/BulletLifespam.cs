@@ -7,7 +7,7 @@ public class BulletLifespam : MonoBehaviour
     [SerializeField]
     private float _lifespam;
 
-    void Start()
+    public void OnEnabled()
     {
         Invoke("Deactivate", _lifespam);
     }

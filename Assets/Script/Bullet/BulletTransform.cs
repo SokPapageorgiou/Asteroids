@@ -23,7 +23,7 @@ public class BulletTransform : MonoBehaviour, IPooledObject
 
     private void SetPosition(Vector3 position)
     {
-        transform.localPosition = position;
+        transform.position = position;
     }
 
     private void SetRotation(Vector3 rotation)
