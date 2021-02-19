@@ -17,6 +17,11 @@ namespace Player
             _objectsLoader = GetComponent<ObjectsLoader>();
         }
 
+        private void Update()
+        {
+            _objectsLoader.playerListner.angleInDegrees = transform.eulerAngles.z;
+        }
+
         private void FixedUpdate()
         {
             _rigidbody2D.rotation -= Rotate(_objectsLoader.userInputListner.horizontalAxis, _objectsLoader.playerStats.rotationSpeed);

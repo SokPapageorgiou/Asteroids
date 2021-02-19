@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userInputListner: {fileID: 11400000, guid: 037911373cbc81a4ea5e3da81695fb9d, type: 2}
+  playerListner: {fileID: 11400000, guid: 0abf725da4619504b992073b2af638fa, type: 2}
   playerStats: {fileID: 11400000, guid: 940378420c768ce4bb103185c03a6a70, type: 2}
 --- !u!114 &6560769383505174603
 MonoBehaviour:

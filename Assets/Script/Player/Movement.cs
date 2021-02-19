@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
@@ -20,7 +19,7 @@ namespace Player
          
         void FixedUpdate()
         {
-            _rigidbody2D.AddForce(SetForce(_objectsLoader.userInputListner.verticalAxis, _objectsLoader.playerStats.movementStrenght));
+            _rigidbody2D.AddRelativeForce(SetForce(_objectsLoader.userInputListner.verticalAxis, _objectsLoader.playerStats.movementStrenght));
         }
 
         public Vector2 SetForce(float verticalInput, float movementStrenght)

@@ -6,7 +6,11 @@ namespace Player
 {
     public class ObjectsLoader : MonoBehaviour
     {
+        [Header("User SO")]
         public UserInputListner userInputListner;
-        public Player.Stats playerStats;
+
+        [Header("Player SO")]
+        public PlayerListner playerListner;
+        public Stats playerStats;
     }
 }
