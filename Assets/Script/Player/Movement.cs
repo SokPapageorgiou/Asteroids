@@ -19,7 +19,8 @@ namespace Player
          
         void FixedUpdate()
         {
-            _rigidbody2D.AddRelativeForce(SetForce(_objectsLoader.userInputListner.verticalAxis, _objectsLoader.playerStats.movementStrenght));
+            _rigidbody2D.AddRelativeForce(SetForce(_objectsLoader.userInputListner.verticalAxis, 
+                _objectsLoader.playerStats.movementStrenght));
         }
 
         public Vector2 SetForce(float verticalInput, float movementStrenght)
