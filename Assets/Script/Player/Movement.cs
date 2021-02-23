@@ -16,7 +16,12 @@ namespace Player
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _objectsLoader = GetComponent<ObjectsLoader>();
         }
-         
+
+        private void Update()
+        {
+            _objectsLoader.playerListner.position = transform.position;
+        }
+
         void FixedUpdate()
         {
             _rigidbody2D.AddRelativeForce(SetForce(_objectsLoader.userInputListner.verticalAxis, 
