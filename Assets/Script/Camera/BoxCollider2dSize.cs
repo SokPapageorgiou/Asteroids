@@ -17,6 +17,8 @@ namespace MainCamera
             _boxCollider2D = GetComponent<BoxCollider2D>();
 
             _boxCollider2D.size = SetSize(_objectsLoader.cameraStats.orthograficSize, _objectsLoader.cameraStats.aspect);
+            _objectsLoader.cameraStats.sizeX = _boxCollider2D.size.x;
+            _objectsLoader.cameraStats.sizeY = _boxCollider2D.size.y;
         }
 
         public Vector2 SetSize(float orthographicSize, float aspect) 
