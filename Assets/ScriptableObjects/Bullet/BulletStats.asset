@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0}
   angle: 0
-  speed: 0
+  fire: 0
+  speed: 1000
   lifeSpawn: 0

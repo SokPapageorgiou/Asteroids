@@ -5,14 +5,20 @@ using Player;
 
 namespace Bullet
 {
+    [RequireComponent(typeof(BulletObjectsLoader))]
     public class PlayerBulletTranslation : MonoBehaviour
     {
         [SerializeField]
         private UserInputListner userInputListner;
         [SerializeField]
         private PlayerListner playerListner;
-        [SerializeField]
+
         private BulletStats bulletStats;
+
+        private void Start()
+        {
+            bulletStats = GetComponent<BulletObjectsLoader>().bulletStats;
+        }
 
         private void Update()
         {

@@ -12,7 +12,7 @@ namespace UserControl
         {
             _userInputListner.horizontalAxis = Input.GetAxis("Horizontal");
             _userInputListner.verticalAxis = Input.GetAxis("Vertical");
-            _userInputListner.fire = Input.GetKeyDown("space");
+            _userInputListner.fire = Input.GetKey("space");
         }
     }   
 }

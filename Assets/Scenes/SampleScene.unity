@@ -390,12 +390,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5285509534101831473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b42d478a4da6044aaf608f236f67052, type: 3}
+  m_Script: {fileID: 11500000, guid: d35e1d88816d0b94d984c309bcc11430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userInputListner: {fileID: 11400000, guid: 037911373cbc81a4ea5e3da81695fb9d, type: 2}
-  playerListner: {fileID: 11400000, guid: 0abf725da4619504b992073b2af638fa, type: 2}
-  bulletStats: {fileID: 11400000, guid: 5174cb2807fcccb4f83314ddd2d690a5, type: 2}
 --- !u!1001 &6962857447112154747
 PrefabInstance:
   m_ObjectHideFlags: 0

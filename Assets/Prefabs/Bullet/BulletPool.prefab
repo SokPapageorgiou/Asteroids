@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8867269560357142034}
   - component: {fileID: 5418448680375917317}
+  - component: {fileID: 5285509534101831474}
+  - component: {fileID: 5285509534101831475}
   m_Layer: 0
   m_Name: BulletPool
   m_TagString: Untagged
@@ -45,3 +47,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectToPool: {fileID: 247648249990038158, guid: 3461f158267c5c6478cd7549efe3b3a9, type: 3}
   _amountToPool: 20
+--- !u!114 &5285509534101831474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334718267927393520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b42d478a4da6044aaf608f236f67052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userInputListner: {fileID: 11400000, guid: 037911373cbc81a4ea5e3da81695fb9d, type: 2}
+  playerListner: {fileID: 11400000, guid: 0abf725da4619504b992073b2af638fa, type: 2}
+--- !u!114 &5285509534101831475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334718267927393520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feddbf1eb01ebf94690165250b78247d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletStats: {fileID: 11400000, guid: 5174cb2807fcccb4f83314ddd2d690a5, type: 2}

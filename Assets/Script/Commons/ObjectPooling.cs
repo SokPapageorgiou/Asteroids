@@ -6,24 +6,41 @@ namespace Commons
 { 
     public class ObjectPooling : MonoBehaviour
     {
-        private Queue<GameObject> _pool;
+        [HideInInspector]
+        public Queue<GameObject> pool;
+        
         [SerializeField]
         private GameObject _objectToPool;
+        
         [SerializeField]
         private int _amountToPool;
 
         private void Start()
         {
-            _pool = new Queue<GameObject>();
+            pool = new Queue<GameObject>();
 
             GameObject temp;
             for (int i = 0; i < _amountToPool; i++)
             {
                 temp = Instantiate(_objectToPool);
-                temp.SetActive(false);
                 temp.transform.SetParent(gameObject.transform);
-                _pool.Enqueue(temp);
+                AddGameObjToQueue(temp, pool);
             }
+        }
+
+        public void AddGameObjToQueue(GameObject temp, Queue<GameObject> pool)
+        {
+            temp.SetActive(false);
+            pool.Enqueue(temp);
+        }
+
+        public GameObject ActivateGameObjectFromPool(Queue<GameObject> pool) 
+        {
+            GameObject temp = pool.Dequeue();
+            temp.SetActive(true);
+            pool.Enqueue(temp);
+
+            return temp;
         }
     }
 }
