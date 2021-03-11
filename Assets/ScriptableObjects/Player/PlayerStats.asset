@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   movementStrenght: 10
-  rotationSpeed: 10
+  angleOffset: -90

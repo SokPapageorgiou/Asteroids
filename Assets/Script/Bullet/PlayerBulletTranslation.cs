@@ -9,11 +9,11 @@ namespace Bullet
     public class PlayerBulletTranslation : MonoBehaviour
     {
         [SerializeField]
-        private UserInputListner userInputListner;
+        private UserInputListner    userInputListner;
         [SerializeField]
-        private PlayerListner playerListner;
+        private PlayerListner       playerListner;
 
-        private BulletStats bulletStats;
+        private BulletStats         bulletStats;
 
         private void Start()
         {

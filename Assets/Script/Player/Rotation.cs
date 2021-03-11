@@ -4,32 +4,21 @@ using UnityEngine;
 
 namespace Player
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(ObjectsLoader))]
     public class Rotation : MonoBehaviour
     {
-        private Rigidbody2D _rigidbody2D;
-        private ObjectsLoader _objectsLoader;
+        private ObjectsLoader _objLoader;
 
         private void Start()
-        {   
-            _rigidbody2D = GetComponent<Rigidbody2D>();
-            _objectsLoader = GetComponent<ObjectsLoader>();
+        {
+            _objLoader = GetComponent<ObjectsLoader>();    
         }
 
         private void Update()
         {
-            _objectsLoader.playerListner.angleInDegrees = transform.eulerAngles.z;
-        }
-
-        private void FixedUpdate()
-        {
-            _rigidbody2D.rotation -= Rotate(_objectsLoader.userInputListner.horizontalAxis, _objectsLoader.playerStats.rotationSpeed);
-        }
-
-        public float Rotate(float horizontalInput, float rotatioSpeed) 
-        {
-            return horizontalInput * rotatioSpeed;
+            var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + _objLoader.playerStats.angleOffset;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
 }

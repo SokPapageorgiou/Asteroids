@@ -8,7 +8,7 @@ namespace Player
     public class Stats : ScriptableObject
     {
         public float movementStrenght;
-        public float rotationSpeed;
+        public float angleOffset;
     }
 
 }

@@ -400,6 +400,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6962857447112154750, guid: 7699085e24e523948a5b777a430fcc7f, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 940378420c768ce4bb103185c03a6a70, type: 2}
     - target: {fileID: 6962857447699148528, guid: 7699085e24e523948a5b777a430fcc7f, type: 3}
       propertyPath: m_RootOrder
       value: 2
